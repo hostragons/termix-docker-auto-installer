@@ -1,89 +1,421 @@
-# 🚀 Termix Docker Auto Installer
+# 🚀 Termix Auto Installer – Hostragons Edition
 
-Deploy **Termix SSH Manager** on Ubuntu in one command.
+Professional one-command installer for **Termix Remote Desktop Platform** with Docker, Nginx reverse proxy, SSL automation, backups, Watchtower auto updates, firewall configuration and Hostragons branding.
+
+Designed for:
+
+- VPS servers
+- Dedicated servers
+- Cloud environments
+- Remote desktop deployments
+- Self-hosted terminal platforms
+- Linux administrators
+- Hosting providers
+
+Supports Ubuntu, Debian, VPS environments and most modern Linux systems.
 
 ---
 
-## ⚡ Quick Install
+# ⚡ Quick Installation
+
+Install instantly with one command:
 
 ```bash
-bash <(curl -fsSL https://raw.githubusercontent.com/hostragons/termix-docker-auto-installer/main/install.sh)
+bash <(curl -fsSL https://cdn.hostragons.com/storage/bash/hostragons_termix_installer.sh)
+```
+
+Update existing installation:
+
+```bash
+bash <(curl -fsSL https://cdn.hostragons.com/storage/bash/hostragons_termix_installer.sh) update
+```
+
+Uninstall:
+
+```bash
+bash <(curl -fsSL https://cdn.hostragons.com/storage/bash/hostragons_termix_installer.sh) uninstall
 ```
 
 ---
 
-## ✨ Features
+# 📌 What Does This Script Do?
 
-* One-command installation
-* Docker-based setup
-* Nginx reverse proxy
-* Free SSL (Let's Encrypt)
-* UFW firewall
-* Fail2ban protection
-* Daily automatic backups
-* Auto updates (Watchtower)
-* RDP / VNC support (guacd)
-* SSH login branding
+This script automatically:
 
----
+✔ Installs Docker
 
-## 🔐 Requirements
+✔ Installs Docker Compose
 
-* Ubuntu 22.04 / 24.04
-* Root access
-* Domain pointing to your server
-* Ports 80 and 443 open
+✔ Installs Nginx
 
----
+✔ Configures reverse proxy
 
-## 📦 Installed Stack
+✔ Installs SSL certificates automatically
 
-* Termix (latest)
-* guacd (RDP support)
-* Docker + Compose
-* Nginx
-* Certbot
-* Fail2ban
-* UFW
-* Watchtower (auto updates)
+✔ Configures UFW firewall
+
+✔ Enables Fail2Ban
+
+✔ Deploys Termix container
+
+✔ Deploys Guacamole backend
+
+✔ Deploys Watchtower automatic updates
+
+✔ Creates automatic backups
+
+✔ Creates scheduled cron jobs
+
+✔ Adds Hostragons branding
+
+✔ Runs Hostragons MOTD automatically
 
 ---
 
-## 🔄 Update
+# 🔥 Features
 
-```bash
-bash <(curl -fsSL https://raw.githubusercontent.com/hostragons/termix-docker-auto-installer/main/update.sh)
+---
+
+## Docker Deployment
+
+Automatically installs:
+
+```text
+Docker
+Docker Compose
+```
+
+Creates:
+
+```text
+/opt/termix
+```
+
+Structure:
+
+```text
+/opt/termix
+├── compose.yml
+├── data
+└── backups
 ```
 
 ---
 
-## 🧹 Uninstall
+## Automatic Reverse Proxy
 
-```bash
-bash <(curl -fsSL https://raw.githubusercontent.com/hostragons/termix-docker-auto-installer/main/uninstall.sh)
+Configures:
+
+```text
+Nginx
+```
+
+Automatically routes:
+
+```text
+https://yourdomain.com
+```
+
+to:
+
+```text
+127.0.0.1:8080
 ```
 
 ---
 
-## 📁 Default Paths
+## SSL Automation
 
-* App: `/opt/termix`
-* Backups: `/opt/termix-backups`
+Installs:
+
+```text
+Certbot
+```
+
+Automatically generates:
+
+```text
+Let's Encrypt SSL certificates
+```
+
+No manual SSL setup required.
 
 ---
 
-## 🔎 SEO Keywords
+## Firewall Configuration
 
-termix installer, termix docker install, termix ubuntu setup, self hosted ssh manager, termix ssl setup, termix nginx, termix hosting, termix rdp setup
+Automatically allows:
+
+```text
+22
+80
+443
+```
+
+Using:
+
+```text
+UFW
+```
 
 ---
 
-## 🏢 Branding
+## Automatic Backup System
 
-This installer adds an optional SSH login banner.
+Creates:
+
+```text
+/opt/termix-backups
+```
+
+Automatic daily backups:
+
+```text
+03:00 AM
+```
+
+Backup script:
+
+```text
+/usr/local/bin/termix-backup.sh
+```
+
+Cron:
+
+```text
+/etc/cron.d/termix-backup
+```
 
 ---
 
-## 📜 License
+## Watchtower Auto Updates
 
-## MIT
+Automatically deploys:
+
+```text
+Watchtower
+```
+
+Features:
+
+- Container monitoring
+- Automatic image updates
+- Cleanup old images
+- Background updates
+
+---
+
+## Hostragons Branding
+
+Adds:
+
+```text
+/etc/update-motd.d/
+```
+
+Automatically displays:
+
+```text
+Powered by Hostragons Hosting
+```
+
+Runs:
+
+```bash
+bash <(curl -fsSL https://cdn.hostragons.com/storage/bash/hostragons_motd.sh)
+```
+
+after installation.
+
+---
+
+# 🖥 Supported Operating Systems
+
+Compatible with:
+
+- Ubuntu 20+
+- Ubuntu 22+
+- Debian
+- VPS environments
+- Dedicated servers
+- KVM virtualization
+- Cloud instances
+
+---
+
+# ☁ Supported Providers
+
+Works with:
+
+- AWS EC2
+- AWS Lightsail
+- Microsoft Azure
+- Google Cloud
+- Oracle Cloud
+- DigitalOcean
+- Vultr
+- Hetzner
+- Contabo
+- OVH
+- Linode
+- Hostinger VPS
+- Dedicated servers
+- Self-hosted infrastructure
+
+---
+
+# 🔧 Requirements
+
+Minimum:
+
+- Root access
+- Domain name
+- Linux server
+- Open ports:
+
+```text
+22
+80
+443
+```
+
+Recommended:
+
+- 2 CPU
+- 4GB RAM
+- 20GB SSD
+
+---
+
+# 📂 Installed Components
+
+Installed packages:
+
+```text
+curl
+nginx
+ufw
+fail2ban
+certbot
+python3-certbot-nginx
+docker.io
+docker-compose-plugin
+```
+
+Containers:
+
+```text
+termix
+guacd
+watchtower
+```
+
+---
+
+# 🖥 Example Installation
+
+Run:
+
+```bash
+bash <(curl -fsSL https://cdn.hostragons.com/storage/bash/hostragons_termix_installer.sh)
+```
+
+Enter:
+
+```text
+Enter domain:
+example.com
+
+Enter email:
+admin@example.com
+```
+
+Wait for automatic deployment.
+
+Done:
+
+```text
+https://example.com
+```
+
+---
+
+# 📈 Common Use Cases
+
+- Self-hosted terminal server
+- Remote desktop environments
+- VPS management
+- Linux administration
+- Web-based SSH systems
+- Cloud infrastructure management
+- Hosting environments
+- Development servers
+- Team remote access
+- Internal infrastructure tools
+
+---
+
+# 🏢 About Hostragons
+
+Hostragons Global Limited
+
+Company Number:
+
+14320956
+
+Headquarters:
+
+London, United Kingdom
+
+Address:
+
+71–75 Shelton Street  
+Covent Garden  
+London WC2H 9JQ  
+United Kingdom
+
+Website:
+
+https://www.hostragons.com/en/
+
+Contact:
+
+https://www.hostragons.com/en/contact
+
+Client Area:
+
+https://my.hostragons.com/
+
+WhatsApp:
+
++44 7367 063425
+
+Telegram:
+
+https://t.me/hostragons
+
+---
+
+# ⚠ Disclaimer
+
+Always deploy on clean systems whenever possible.
+
+Recommended:
+
+✔ Test first on staging environments
+
+✔ Keep external backups
+
+✔ Restrict SSH access
+
+✔ Keep server updated
+
+---
+
+# 📜 License
+
+MIT License
+
+---
+
+Made with ❤️ by Hostragons Global Limited
